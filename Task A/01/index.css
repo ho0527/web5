@@ -1,0 +1,101 @@
+.slidetitle{
+    display: inline-block;
+    width: 100%;
+    /* rotate: 90; */
+}
+
+.sitetitle{
+    float: left;
+    background-color: rgb(249, 176, 81);
+    width: 50%;
+    height: 70px;
+    margin: 5px;
+}
+
+.nav{
+    float: left;
+    background-color: pink;
+    width: 16%;
+    height: 70px;
+    margin: 3px;
+}
+
+.posttitle{
+    float: left;
+    background-color: aqua;
+    width: 80%;
+    height: 70px;
+    margin: 3px;
+}
+
+.right{
+    float:left;
+    width: 19%;
+    position:absolute;
+    top:90px;
+    left:1230px;
+}
+
+.sidebar{
+    /* float:right; */
+    background-color:orange;
+    width: 100%;
+    height: 140px;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.ads{
+    /* float:right; */
+    background-color:green;
+    width: 100%;
+    height: 140px;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.otherstuffs{
+    /* float:right; */
+    background-color:darkmagenta;
+    width: 100%;
+    height: 140px;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.div{
+    float: left;
+    width: 100%;
+}
+
+.postmeta{
+    float: left;
+    background-color:chartreuse;
+    width: 19%;
+    height: 350px;
+    margin: 3px;
+}
+
+.maincontent{
+    float: left;
+    background-color:gray;
+    width: 60%;
+    height: 140px;
+    margin: 3px;
+}
+
+.maincontentimage{
+    float: left;
+    background-color:yellow;
+    width: 60%;
+    height: 210px;
+    margin: 3px;
+}
+
+.footer{
+    float: left;
+    background-color:goldenrod;
+    width: 100%;
+    height: 70px;
+    margin: 3px;
+}
