@@ -1,0 +1,46 @@
+.div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 999;
+}
+
+.mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(100, 100, 100, 0.25);
+}
+
+.X {
+    position: absolute;
+    right: calc(((100% - 700px)/2) - 15px);
+    bottom: calc(((100% - 250px)/2) - 15px);
+    font-size: 20px;
+    display: block;
+}
+
+.body {
+    position: absolute;
+    left: calc((100% - 700px)/2);
+    top: calc((100% - 250px)/2);
+    display: block;
+    text-align: center;
+    width: 700px;
+    height: 250px;
+    border: 1px blue solid;
+    background-color: rgba(100, 100, 100, 0.5);
+}
+
+.stu{
+    font-size: 75px;
+    text-align: center;
+}
+
+.stutext{
+    width: 450px;
+}
