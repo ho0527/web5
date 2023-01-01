@@ -1,46 +1,92 @@
+
+.left{
+    position: absolute;/* 絕對定位 */
+    top: 0px;/* 定位 */
+    left: 20px;
+    width: 35%;/* 寬度 */
+    height: 100%;/* 高度 */
+}
+
+/* 新增學生 */
+.addsut{
+    cursor: pointer;/* 覆蓋指標 */
+    background-color: rgba(200, 200, 200,0.75);/* 背景顏色 */
+    width: 250px;/* 寬度 */
+    height: 40px;/* 高度 */
+    font-size: 30px;/* 字體大小 */
+    text-align: center;/* 文字置中 */
+    border-radius: 20px;/* 圓弧邊框 */
+    position: absolute;/* 絕對定位 */
+    top:100px;/* 定位 */
+}
+
+.addsut:hover{
+    background-color: rgba(100, 100, 100,0.35);/* 背景顏色 */
+}
+
+/*
+燈箱
+#########################################
+*/
 .div {
-    position: absolute;
-    top: 0px;
+    position: absolute;/* 絕對定位 */
+    top: 0px;/* 定位 */
     left: 0px;
     bottom: 0px;
     right: 0px;
-    z-index: 999;
+    z-index: 999;/*  */
 }
 
 .mask {
-    position: absolute;
-    top: 0px;
+    position: absolute;/* 絕對定位 */
+    top: 0px;/* 定位 */
     left: 0px;
     bottom: 0px;
     right: 0px;
-    background-color: rgba(100, 100, 100, 0.25);
+    background-color: rgba(100, 100, 100, 0.25);/* 背景顏色 */
 }
 
-.X {
-    position: absolute;
-    right: calc(((100% - 700px)/2) - 15px);
-    bottom: calc(((100% - 250px)/2) - 15px);
-    font-size: 20px;
-    display: block;
+.button{
+    position: absolute;/* 絕對定位 */
+    right: calc(((100% - 700px)/2) + 80px);/* 定位 */
+    bottom: calc(((100% - 250px)/2) + 6px);
+    display: block;/* display */
+}
+
+.buttoncel{
+    font-size: 30px;/* 字體大小 */
+    width: 125px;/* 寬度 */
+}
+
+.buttonent{
+    font-size: 30px;/* 字體大小 */
+    width: 125px;/* 寬度 */
 }
 
 .body {
-    position: absolute;
-    left: calc((100% - 700px)/2);
+    position: absolute;/* 絕對定位 */
+    left: calc((100% - 700px)/2);/* 定位 */
     top: calc((100% - 250px)/2);
-    display: block;
-    text-align: center;
-    width: 700px;
-    height: 250px;
-    border: 1px blue solid;
-    background-color: rgba(100, 100, 100, 0.5);
+    display: block;/* display */
+    text-align: center;/* 文字置中 */
+    width: 700px;/* 寬度 */
+    height: 250px;/* 高度 */
+    border: 1px blue solid;/* 邊框 */
+    background-color: rgba(100, 100, 100, 0.5);/* 背景顏色 */
+    border-radius: 15px;/* 圓弧邊框 */
 }
 
 .stu{
-    font-size: 75px;
-    text-align: center;
+    font-size: 45px;/* 字體大小 */
+    text-align: center;/* 文字置中 */
 }
 
 .stutext{
-    width: 450px;
+    width: 450px;/* 寬度 */
+    height: 75px;/* 高度 */
+    font-size: 50px;/* 字體大小 */
+    resize: none;/* 禁止移動大小 */
 }
+/*
+#####################################
+*/
