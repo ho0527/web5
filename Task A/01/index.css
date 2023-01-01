@@ -30,7 +30,7 @@
 .right{
     float:left;
     width: 19%;/* 寬度 */
-    position:absolute;/* 設定背景顏色 */
+    position:absolute;/* 絕對定位 */
     top:90px;/* 距頂部高度位移 */
     right:10px;/* 距左邊位移 */
 }
