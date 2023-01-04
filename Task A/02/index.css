@@ -1,0 +1,40 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 8px solid #ddd;
+  border-top-color: #19A68C;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader.green {
+  border-top-color: #19A68C;
+  animation: spin 1s linear infinite;
+}
+
+.loader.red {
+  border-top-color: #F63D3A;
+  animation: spin 1s linear infinite;
+}
+
+.loader.yellow {
+  border-top-color: #FDA543;
+  animation: spin 1s linear infinite;
+}
+
+.loader.blue {
+  border-top-color: #193B48;
+  animation: spin 1s linear infinite;
+}
