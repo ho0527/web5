@@ -1,7 +1,7 @@
 let mod=document.getElementById("change")
 let buttons=document.querySelectorAll('button')
 let output=document.getElementById("output")
-let a="all"
+let a="twodecimals"
 //訂定變數
 
 output.value=""//將output清空
