@@ -1,5 +1,5 @@
 /* CSS styles for the page layout */
-.container {
+/* .container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,4 +30,16 @@
     position: absolute;
     top: 0;
     left: 0;
+} */
+
+#image-container {
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+}
+
+#image-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
