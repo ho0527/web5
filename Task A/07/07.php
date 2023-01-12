@@ -3,10 +3,10 @@
     // 若 Referer 是 07.html，則允許瀏覽圖片
     // 若 Referer 不是 07.html，則禁止瀏覽圖片
     // 取得 HTTP 頭 "Referer" 的值
-    $referer = $_SERVER["HTTP_REFERER"];
+    @$referer = $_SERVER["HTTP_REFERER"];
 
     // 判斷 Referer 是否是 07.html
-    if ($referer=="http://web5.tw/07.html") {
+    if ($referer=="http://web2.tw/Task%20A/07/07.html") {
         // 允許瀏覽圖片
         // 取得圖片的路徑
         $image_path= "images/".$_GET["image"];
@@ -16,6 +16,6 @@
         // 禁止瀏覽圖片
         // 回傳 Status Code: 403
         http_response_code(403);
-        echo("Status Code: 403");
+        echo("Status Code:403");
     }
 ?>
