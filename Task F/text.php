@@ -7,6 +7,6 @@
         }
         $num2=$number[1];
         echo($num1+$num2);
-        echo("\n")
+        echo("\n");
     }
 ?>

@@ -1,40 +1,74 @@
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.loader {
-  width: 40px;
-  height: 40px;
+/* 設定圓形樣式 */
+.circle {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: 8px solid #ddd;
-  border-top-color: #19A68C;
+  background-color: red;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: rotate 4s infinite;
 }
 
-.loader.green {
-  border-top-color: #19A68C;
-  animation: spin 1s linear infinite;
+/* 設定第二個圓形樣式 */
+.circle2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 4s infinite;
+  animation-delay: 1s;
 }
 
-.loader.red {
-  border-top-color: #F63D3A;
-  animation: spin 1s linear infinite;
+/* 設定第三個圓形樣式 */
+.circle3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 4s infinite;
+  animation-delay: 2s;
 }
 
-.loader.yellow {
-  border-top-color: #FDA543;
-  animation: spin 1s linear infinite;
+/* 設定第四個圓形樣式 */
+.circle4 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 4s infinite;
+  animation-delay: 3s;
 }
 
-.loader.blue {
-  border-top-color: #193B48;
-  animation: spin 1s linear infinite;
+/* 設定旋轉動畫 */
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(270deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
+
