@@ -16,9 +16,9 @@
             <div class="signupbody" class="indexdiv">
                 <div>註冊帳號</div>
                 <div class="signupdiv">
-                    <form>
-                        用戶帳號: <input type="text" class="input" name="username"><br><br>
-                        密碼: <input type="text" class="input" name="code"><br><br>
+                    <form method="post">
+                        用戶帳號: <input type="text" class="input" name="email"><br><br>
+                        密碼: <input type="text" class="input" name="password"><br><br>
                         用戶名: <input type="text" class="input" name="name"><br>
                         管理員權限: <input type="checkbox" name="adminbox"><br><br>
                         <input type="button" id="X" class="button" value="取消">
@@ -26,6 +26,7 @@
                     </form>
                     <?php
                         include("api/link.php");
+                        signupapi($_POST["email"],$_POST["password"],$_POST["name"]);
                     ?>
                 </div>
             </div>
