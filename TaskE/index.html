@@ -7,16 +7,22 @@
     </head>
     <body>
         <header class="header">
-        </header>
+            <h1 id="logo"></h1>
+            <form id="searchForm">
+                <input type="text" name="search" class="search" placeholder="搜尋">
+            </form>
+        </header><br>
         <aside class="aside">
-            <button id="addStudent" class="addsut">新增學生</button>
+            <button id="addStudent" class="addsut"><img src=""></img>新增學生</button>
             <ul id="studentList" class="list">
                 <li class="item">所有學生 <span class="num"></span></li>
             </ul>
+            <hr>
             <ul id="classList" class="list">
-                <li class="item">班級 <span class="num"></span></li>
+                <li class="item"><img src=""></img>班級 <span class="num"></span></li><br>
                 <li id="addClass" class="item">建立班級</li>
             </ul>
+            <hr>
             <ul id="trash" class="list">
                 <li class="item">垃圾桶</li>
             </ul>
@@ -43,26 +49,47 @@
                 <div class="message">目前還沒有任何學生</div>
             </div>
         </main>
-        <div class="div" id="div">
+        <div class="div" id="dialog">
             <div class="mask"></div>
             <div class="body">
-                <form>
-                    <div class="button">
-                        <class class="stu">建立學生</class><br>
-                        <textarea name="stutends" id="stuname" class="stutext" placeholder="建立學生"></textarea><br>
-                        <button type="button" id="X" class="close">取消</button>
-                        <button type="submit" id="addsutsubmit" name="enter" class="buttonent">確定</button>
-                    </div>
+                <form class="newStudent" id="newStudent" method="post">
+                    <!-- <div class="button"> -->
+                        <h2 class="title">建立學生</h2><hr>
+                        <div class="left">
+                            <div class="avater">
+                                <img src="default.jpeg" class="avater_preview"></img>
+                                <input type="file" class="avatar">
+                            </div>
+                        </div>
+                        <div class="right">
+                            <input type="text" name="last_name" id="last_name" class="name" placeholder="姓氏">
+                            <input type="text" name="first_name" id="first_name" class="name" placeholder="名字"><br>
+                            <input type="email" name="email[]" class="input" placeholder="email"><br>
+                            <input type="tel" name="phone[]" class="input" placeholder="手機"><br>
+                            <input type="text" name="address" class="input" placeholder="住址"><br>
+                            <select name="class" id="class"></select><br>
+                            <textarea name="note" id="" cols="20" rows="1" class="note"></textarea><br>
+                            <div class="button">
+                                <button type="button" id="close" class="close">取消</button>
+                                <button id="addsutsubmit" name="enter" class="submit">確定</button>
+                            </div>
+                        </div>
+                    <!-- </div> -->
                 </form>
             </div>
         </div>
-        <div id="dialog" class="hidden">
-            <h2 class="title">建立班級</h2>
-            <form class="newClass">
-                <label>班級名稱: <input type="text" name="name"></label>
-                <button class="close">取消</button>
-                <button class="submit">儲存</button>
-            </form>
+        <div id="dialog2" class="addclass">
+            <div class="mask"></div>
+            <div class="addclassbody">
+                <h2 class="title">建立班級</h2><hr>
+                <form class="newClass" method="post">
+                    <input type="text" name="name" placeholder="班級名稱" class="addclass"><br>
+                    <div class="button">
+                        <button class="close">取消</button>
+                        <button class="submit">儲存</button>
+                    </div>
+                </form>
+            </div>
         </div>
         <script src="index.js"></script>
     </body>
