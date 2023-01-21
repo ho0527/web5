@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>TaskD-圖片分享平台首頁</title>
-        <link rel="stylesheet" href="index.css">
+        <title>一般會員專區</title>
+        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+        <link href="index.css" rel="stylesheet">
     </head>
     <body>
         <div class="head">
@@ -15,7 +16,15 @@
         <?php
             include("link.php");
             loginlightbox();
-        ?>
+        ?><br>
+        <table class="main-table">
+            <tr>
+                <td class="user-table2">
+                </td>
+                <td class="user-table2">
+                </td>
+            </tr>
+        </table>
         <script src="index.js"></script>
     </body>
 </html>

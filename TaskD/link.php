@@ -1,4 +1,48 @@
 <?php
+    function loginlightbox(){
+        ?>
+        <div class="div" id="signupdiv">
+            <div class="mask"></div>
+            <div class="signupbody" class="indexdiv">
+                <div>註冊帳號</div>
+                <div class="signupdiv">
+                    <form method="post">
+                        用戶帳號: <input type="text" class="input" name="email"><br><br>
+                        密碼: <input type="text" class="input" name="password"><br><br>
+                        用戶名: <input type="text" class="input" name="nickname"><br><br>
+                        頭像:<input type="file" style="width:175px;" name="headpng"><br>
+                        管理員權限: <input type="checkbox" name="adminbox"><br>
+                        <input type="button" id="X" class="button" value="取消">
+                        <input type="submit" name="enter" class="button" value="送出">
+                    </form>
+                    <?php
+                        if(isset($_POST["enter"])){
+                            signupapi();
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="div" id="logindiv">
+            <div class="mask"></div>
+            <div class="loginbody" class="indexdiv">
+                <?php session_start(); ?>
+                <class class="indextitle">登入</class><br>
+                <form>
+                    <div class="text">
+                        帳號: <input type="text" name="username" id="username" class="input"><br>
+                    </div>
+                    <div class="text">
+                        密碼: <input type="password" name="password" id="password" class="input"><br>
+                    </div>
+                    <input type="button" id="X" class="button" value="取消">
+                    <input type="reset" value="清除" name="clear" class="button">
+                    <button type="button" class="button" id="login">登入</button><br><br>
+                </form>
+            </div>
+        </div><?php
+    }
+
     function login($email,$password){
         $curl=curl_init();//建立 cURL
         curl_setopt_array($curl,[
