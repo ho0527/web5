@@ -1,3 +1,7 @@
+.body{
+    height: 1080px;
+    width: 1920px;
+}
 
 .left{
     position: absolute;/* 絕對定位 */
@@ -35,6 +39,9 @@
     bottom: 0px;
     right: 0px;
     z-index: 999;/*  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mask {
@@ -44,13 +51,6 @@
     bottom: 0px;
     right: 0px;
     background-color: rgba(100, 100, 100, 0.25);/* 背景顏色 */
-}
-
-.button{
-    position: absolute;/* 絕對定位 */
-    right: calc(((100% - 700px)/2) + 80px);/* 定位 */
-    bottom: calc(((100% - 250px)/2) + 6px);
-    display: block;/* display */
 }
 
 .buttoncel{
@@ -65,15 +65,16 @@
 
 .body {
     position: absolute;/* 絕對定位 */
-    left: calc((100% - 700px)/2);/* 定位 */
-    top: calc((100% - 250px)/2);
-    display: block;/* display */
+    left: 50%;/* 定位 */
+    top: 50% ;
+    transform: translate(-50%,-50%) scale(1.5);
     text-align: center;/* 文字置中 */
-    width: 700px;/* 寬度 */
-    height: 250px;/* 高度 */
+    width: 550px;/* 寬度 */
+    height: 200px;/* 高度 */
     border: 1px blue solid;/* 邊框 */
     background-color: rgba(100, 100, 100, 0.5);/* 背景顏色 */
     border-radius: 15px;/* 圓弧邊框 */
+    /* display: block; */
 }
 
 .stu{

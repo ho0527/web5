@@ -39,7 +39,7 @@ body{
     background-color: rgb(125, 125, 125);
     border-radius: 25px;
     height: 280px;
-    width: 275px;
+    width: 200px;
     box-shadow: 5px 5px 5px rgba(110, 110, 110, 0.422);
     user-select: none;
 }
@@ -352,6 +352,7 @@ table{
     font-size: 30px;/* 字體大小 */
     width: 125px;/* 寬度 */
 }
+
 .body {
     position: absolute;
     left: calc((100% - 700px)/2);
@@ -371,7 +372,7 @@ table{
     top: 50%;
     display: block;/* display */
     text-align: center;/* 文字置中 */
-    width: 350px;/* 寬度 */
+    width: 285px;/* 寬度 */
     height: 125px;/* 高度 */
     transform: translate(-50%,-50%) scale(4);
     border: 1px blue solid;/* 邊框 */
@@ -387,7 +388,6 @@ table{
     text-align: center;/* 文字置中 */
     width: 350px;/* 寬度 */
     height: 125px;/* 高度 */
-    
     transform: translate(-50%,-50%) scale(1);
     border: 1px blue solid;/* 邊框 */
     background-color: rgba(100, 100, 100, 0.5);/* 背景顏色 */

@@ -8,33 +8,22 @@
     use Illuminate\Support\Facades\Validator;
     // include("../../link.php");
 
-    // Route::group(["prefix" =>"home"],function(){
-    //     Route::get("/index",[HomeController::class,"index"]);
-    //     Route::post("/index",[HomeController::class,"indexProcess"]);
-    //     Route::get("/about",[HomeController::class,"about"]);
-    //     Route::get("/main",[HomeController::class,"main"]);
+    // Route::group(["prefix" =>"home"], function(){
+    //     Route::get("/index", [HomeController::class, "index"]);
+    //     Route::post("/index", [HomeController::class, "indexProcess"]);
+    //     Route::get("/about", [HomeController::class, "about"]);
+    //     Route::get("/main", [HomeController::class, "main"]);
     // });
-
     class register extends Controller{
         public function register(Request $request){
             $validator=Validator::make($request->all(),[//提供的 Validator 來驗證 $request (來自客戶端的請求) 的資料是否符合規定。
-                "email"=>"required|email|unique:users",//required->必填 unique->唯一
-                "nickname"=>"required|string",
-                "password"=>"required|string|min:8|max:24",
-                "profile_image"=>"required|file|mimes:png,jpg"
+                "email"=>"required|email",//required->必填 unique->唯一
+                "password"=>"required|string",
             ],[
-                "email.unique"=>"MSG_USER_EXISTS",
-                "password.min"=>"MSG_PASSWORD_NOT_SECURE",
-                "password.max"=>"MSG_PASSWORD_NOT_SECURE",
                 "email.required"=>"MSG_MISSING_FLELD",
-                "nickname.required"=>"MSG_MISSING_FLELD",
                 "password.required"=>"MSG_MISSING_FLELD",
-                "profile.required"=>"MSG_MISSING_FLELD",
                 "email.email"=>"MSG_WORND_DATA_TYPE",
-                "nickname.string"=>"MSG_WORND_DATA_TYPE",
                 "password.string"=>"MSG_WORND_DATA_TYPE",
-                "profile.file"=>"MSG_WORND_DATA_TYPE",
-                "profile.mimes"=>"MSG_IMAGE_CAN_NOT_PROCESS",
             ]);
             $errors409=[
                 "email.unique"=>"MSG_USER_EXISTS",
@@ -43,14 +32,9 @@
             ];
             $errors400=[
                 "email.required"=>"MSG_MISSING_FLELD",
-                "nickname.required"=>"MSG_MISSING_FLELD",
                 "password.required"=>"MSG_MISSING_FLELD",
-                "profile.required"=>"MSG_MISSING_FLELD",
                 "email.email"=>"MSG_WORND_DATA_TYPE",
-                "nickname.string"=>"MSG_WORND_DATA_TYPE",
                 "password.string"=>"MSG_WORND_DATA_TYPE",
-                "profile.file"=>"MSG_WORND_DATA_TYPE",
-                "profile.mimes"=>"MSG_IMAGE_CAN_NOT_PROCESS"
             ];
             if($validator->fails()){//如果失敗
                 $errors = $validator->errors();

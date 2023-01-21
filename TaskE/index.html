@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>模組 E - 學生資料管理系統</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header class="header">
+        </header>
+        <aside class="aside">
+            <button id="addStudent" class="addsut">新增學生</button>
+            <ul id="studentList" class="list">
+                <li class="item">所有學生 <span class="num"></span></li>
+            </ul>
+            <ul id="classList" class="list">
+                <li class="item">班級 <span class="num"></span></li>
+                <li id="addClass" class="item">建立班級</li>
+            </ul>
+            <ul id="trash" class="list">
+                <li class="item">垃圾桶</li>
+            </ul>
+            <button id="export_data">匯出資料</button>
+            <button id="import_data">匯入資料</button>
+        </aside>
+        <main id="main">
+            <div class="students">
+                <div class="student">
+                    <img class="avatar" src="" alt="">
+                    <div class="info">
+                        <span class="fullname"></span>
+                        <span class="student_id"></span>
+                        <span class="email"></span>
+                        <span class="phone"></span>
+                        <span class="class"></span>
+                        <span class="address"></span>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">編輯</button>
+                        <button class="delete">刪除</button>
+                    </div>
+                </div>
+                <div class="message">目前還沒有任何學生</div>
+            </div>
+        </main>
+        <div class="div" id="div">
+            <div class="mask"></div>
+            <div class="body">
+                <form>
+                    <div class="button">
+                        <class class="stu">建立學生</class><br>
+                        <textarea name="stutends" id="stuname" class="stutext" placeholder="建立學生"></textarea><br>
+                        <button type="button" id="X" class="close">取消</button>
+                        <button type="submit" id="addsutsubmit" name="enter" class="buttonent">確定</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="dialog" class="hidden">
+            <h2 class="title">建立班級</h2>
+            <form class="newClass">
+                <label>班級名稱: <input type="text" name="name"></label>
+                <button class="close">取消</button>
+                <button class="submit">儲存</button>
+            </form>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

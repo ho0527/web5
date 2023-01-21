@@ -21,4 +21,5 @@ but.forEach(function(buttons){
     }
 })
 
-// window.onbeforeunload = function(){return false }
+
+window.onbeforeunload=none
