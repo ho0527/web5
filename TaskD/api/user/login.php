@@ -1,5 +1,5 @@
 <?php
-    namespace App\Http\Controllers;
+    // namespace App\Http\Controllers;
     use App\Models\User;
     use App\Http\Controllers\Controller;
     // use Illuminate\Http\Route;
@@ -14,7 +14,7 @@
     //     Route::get("/about", [HomeController::class, "about"]);
     //     Route::get("/main", [HomeController::class, "main"]);
     // });
-    class register extends Controller{
+    class login extends Controller{
         public function register(Request $request){
             $validator=Validator::make($request->all(),[//提供的 Validator 來驗證 $request (來自客戶端的請求) 的資料是否符合規定。
                 "email"=>"required|email",//required->必填 unique->唯一
@@ -59,6 +59,7 @@
             $path=$profile_image->store("public/profile_images");
             $user->profile_image=$path;
             $user->save();
+            $hash=hash("sha256",$_POST["password"]);
             return response()->json([
                 "success"=>true,
                 "message"=>"User registered successfully",

@@ -26,7 +26,7 @@
                         <input type="submit" name="enter" class="button" value="送出">
                     </form>
                     <?php
-                        include("api/link.php");
+                        include("link.php");
                         if(isset($_POST["enter"])){
                             signupapi();
                         }
