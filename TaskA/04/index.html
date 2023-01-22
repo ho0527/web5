@@ -1,39 +1,51 @@
-<!-- HTML for the image cropper page -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>A04</title>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <!-- 顯示上傳圖像的區域 -->
-        <div id="image-container"></div>
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="font-awesome/css/fontawesome.css">
+	</head>
+	<body>
 
-        <!-- 顯示虛線矩形的canvas元件 -->
-        <canvas id="image-canvas"></canvas>
-
-        <!-- 上傳圖像的按鈕 -->
-        <input type="file" id="image-input" onchange="previewImage()">
-
-        <!-- crop / download 按鈕 -->
-        <button id="crop-button" onclick="cropImage()">Crop</button>
-        <button id="download-button" onclick="downloadImage()">download</button>
-
-        <!-- <div class="container"> -->
-            <!-- Image cropper container -->
-            <!-- <div class="cropper"> -->
-                <!-- Dotted rectangle for selecting the crop area -->
-                <!-- <div class="dotted-rectangle"></div> -->
-                <!-- Image to be cropped -->
-                <!-- <img src="" alt=""> -->
-            <!-- </div> -->
-            <!-- File input for selecting the image to be cropped -->
-            <!-- <input type="file" accept="image/*"> -->
-            <!-- Crop and download buttons -->
-            <!-- <button class="crop-button">Crop</button>
-            <button class="download-button" disabled>Download</button><br>
-        </div> -->
-        <script src="index.js"></script>
-    </body>
+		<div class="container">
+			<div class="img-container">
+				<span>Drag & Drop image</span>
+				<canvas id="mycanvas"></canvas>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-primary">
+					<span class="fa fa-search-plus"></span>
+				</button>
+				<button class="btn btn-primary">
+					<span class="fa fa-search-minus"></span>
+				</button>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-primary">
+					<span class="fa fa-undo"></span>
+				</button>
+				<button class="btn btn-primary">
+					<span class="fa fa-redo"></span>
+				</button>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-primary">
+					<span class="fa fa-arrows-alt-h"></span>
+				</button>
+				<button class="btn btn-primary">
+					<span class="fa fa-arrows-alt-v"></span>
+				</button>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-primary">
+					<span class="fa fa-trash"></span>
+				</button>
+				<button class="btn btn-primary">
+					<span class="fa fa-download"></span>
+				</button>
+			</div>
+		</div>
+		<script src="jquery/jquery-3.3.1.min.js"></script>
+	</body>
 </html>

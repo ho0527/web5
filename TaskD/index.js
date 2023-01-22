@@ -1,11 +1,13 @@
 let but=document.querySelectorAll("#X")
 let logindiv=document.getElementById("logindiv")
 let signupdiv=document.getElementById("signupdiv")
+let settingdiv=document.getElementById("settingdiv")
 let index=document.getElementById("index")
 let view=document.getElementById("view")
 let signup=document.getElementById("signup")
 let login=document.getElementById("login")
-let button=[index,view,signup,login]
+let setting=document.getElementById("setting-button")
+let button=[index,view,signup,login,setting]
 
 console.log(window.location.pathname);
 logindiv.style.display="none"

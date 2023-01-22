@@ -2,7 +2,7 @@ body{
     width: 1875px;
     height: 900px;
     background-color:rgba(244, 236, 236, 0.37);
-    user-select: none;
+    /* user-select: none; */
 }
 
 .head{
@@ -11,6 +11,9 @@ body{
     display: flex;
     justify-content: right;
     background-color: rgba(55, 55, 55, 0.234);
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
 
 .indextitle{
@@ -19,6 +22,8 @@ body{
     font-size:25px;
     font-weight:bold;
     text-align: center;
+    position: relative;
+    top: 5px;
 }
 
 .text{
@@ -27,20 +32,22 @@ body{
     font-size:10px;
     font-weight:bold;
     margin:3px;
+    position: relative;
+    top: 2px;
 }
 
 .indexdiv{
     position: absolute;
-    top: 50%;
+    bottom: 0px;
     left: 50%;
-    transform:  translate(-50%, -50%) scale(1);
+    transform:  translate(-50%, -100%) scale(2.5);
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(125, 125, 125);
     border-radius: 25px;
-    height: 280px;
-    width: 200px;
+    height: 175px;
+    width: 270px;
     box-shadow: 5px 5px 5px rgba(110, 110, 110, 0.422);
 }
 
@@ -74,21 +81,14 @@ body{
     width:70px;
 }
 
-.dragbox{
+.verifybox{
     border: 1px black solid;
-    height: 40px;
+    height: 20px;
     width: 40px;
     display: inline-block;
     background-color: white;
 }
 
-.dropbox{
-    border: 1px black solid;
-    height: 40px;
-    width: 130px;
-    display: inline-block;
-    background-color: white;
-}
 
 .block2{
     border: 1px black solid;
@@ -416,6 +416,7 @@ table{
     border: 0.5px black solid;
     height: 25px;
     width: 75px;
+    margin-top: 5px;
 }
 
 .button:hover{
@@ -424,4 +425,9 @@ table{
 
 .selectbut{
     background-color: rgb(187, 187, 187)
+}
+
+.logo{
+    width: 101.5%;
+    height: 45%;
 }
