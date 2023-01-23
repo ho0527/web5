@@ -103,9 +103,11 @@
                         }
                     ?>
                 </div>
-            </div>
+            </div><br><br>
             <div class="news">
-                <div>最新消息與賽制公告區塊</div>
+                <div class="newstitle">最新消息與賽制公告區塊</div>
+                <div class="newsmessage">
+                </div>
             </div>
         </div>
         <div class="post" id="post">

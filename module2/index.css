@@ -91,7 +91,32 @@ body{
     background-color: orange;
 }
 
+.newstitle{
+    border: 1px black solid;
+    width: 1200px;
+    /* height: 975px; */
+    position: relative;
+    /* bottom: 50%; */
+    left: 50%;
+    color: white;
+    transform: translate(-50%,0%);
+    text-align: center;
+    background-color: orange;
+}
+
 .pinpostmessage{
+    border: 1px black solid;
+    width: 1200px;
+    height: 175px;
+    position: relative;
+    /* bottom: 50%; */
+    left: 50%;
+    transform: translate(-50%,0%);
+    text-align: center;
+    /* background-color: orange; */
+}
+
+.newsmessage{
     border: 1px black solid;
     width: 1200px;
     height: 175px;

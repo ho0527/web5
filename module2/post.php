@@ -31,6 +31,43 @@
             </div>
         </div>
         <?php
+            include("link.php");
+            if(isset($_GET["submit"])){
+                @$username=$_GET["username"];
+                @$email=$_GET["email"];
+                @$tel=$_GET["tel"];
+                @$picture=$_FILES["picture"]["picture"];
+                @$_SESSION["name"]=$username;
+                @$_SESSION["email"]=$email;
+                @$_SESSION["tel"]=$tel;
+                if(!preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/", $email)) {
+                    ?><script>alert("email驗證失敗!");location.href="post.php"</script><?php
+                }elseif(!preg_match("/^[0-9-]+$/",$tel)){
+                    ?><script>alert("電話驗證失敗!");location.href="post.php"</script><?php
+                }elseif($username==""){
+                    ?><script>alert("請輸入名字!");location.href="post.php"</script><?php
+                }else{
+                    if(isset($picture)){
+                        // 轉換圖片為二進位資料
+                        @$image=base64_encode(file_get_contents($picture));
+                        mysqli_query($db,"INSERT INTO `comp`(`username`, `email`,`tel`, `picture`) VALUES ('$username','$email','$tel','$image')");
+                        ?><script>alert("新增成功!");location.href="post.php"</script><?php
+                        @$_SESSION["name"]="";
+                        @$_SESSION["email"]="";
+                        @$_SESSION["tel"]="";
+                        @$_SESSION["message"]="";
+                        @$_SESSION["sn"]="";
+                    }else{
+                        mysqli_query($db,"INSERT INTO `comp`(`username`, `email`,`tel`, `picture`) VALUES ('$username','$email','$tel','')");
+                        ?><script>alert("新增成功!");location.href="post.php"</script><?php
+                        @$_SESSION["name"]="";
+                        @$_SESSION["email"]="";
+                        @$_SESSION["tel"]="";
+                        @$_SESSION["message"]="";
+                        @$_SESSION["sn"]="";
+                    }
+                }
+            }
             if(isset($_GET["logout"])){
                 if(isset($_SESSION["data"])){
                     ?><script>alert("登出成功!");location.href="login.php"</script><?php
