@@ -9,9 +9,9 @@
         <img src="logo.png" class="logo">
         <div class="head">
             <form>
-                <input type="button" id="index" value="玩家留言" class="indexbutton selectbut" onclick="location.href='index.php'">
+                <input type="button" id="index" value="玩家留言" class="indexbutton" onclick="location.href='index.php'">
                 <input type="button" id="view" value="玩家參賽" class="indexbutton" onclick="location.href='post.php'">
-                <input type="button" id="signup" value="網站管理" class="indexbutton" onclick="location.href='login.php'">
+                <input type="button" id="signup" value="網站管理" class="indexbutton selectbut" onclick="location.href='login.php'">
                 <input type="submit" id="loggout-button" class="indexbutton" name="logout" value="登出">
             </form>
         </div>
