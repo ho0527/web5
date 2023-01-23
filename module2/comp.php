@@ -15,15 +15,22 @@
                 <input type="submit" id="loggout-button" class="indexbutton" name="logout" value="登出">
             </form>
         </div>
-        <div class="post">
-            <div class="posthead">
-                <input type="button" value="新增留言">
-                <div class="posttitle">玩家留言列表</div>
-            </div>
-            <div class="postbody">
-            </div>
-        </div>
         <?php
+            include("link.php");
+            if(isset($_SESSION["data"])){
+                ?>
+                <div class="loginhead">
+                    <button class="button2" onclick="location.href='login.php'">留言管理</button>
+                    <button class="button2 selectbut" onclick="location.href='comp.php'">賽制管理</button>
+                </div>
+                <?php
+                if(isset($_GET["logout"])){
+                    ?><script>alert("登出成功!");location.href="login.php"</script><?php
+                    session_unset();
+                }
+            }else{
+                ?><script>alert("請先登入");location.href="login.php"</script><?php
+            }
             if(isset($_GET["logout"])){
                 if(isset($_SESSION["data"])){
                     ?><script>alert("登出成功!");location.href="login.php"</script><?php

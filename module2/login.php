@@ -8,22 +8,22 @@
     <body>
         <img src="logo.png" class="logo">
         <div class="head">
-            <input type="button" id="index" value="玩家留言" class="indexbutton" onclick="location.href='index.php'">
-            <input type="button" id="view" value="玩家參賽" class="indexbutton" onclick="location.href='post.php'">
-            <input type="button" id="signup" value="網站管理" class="indexbutton" onclick="location.href='login.php'">
+            <form>
+                <input type="button" id="index" value="玩家留言" class="indexbutton" onclick="location.href='index.php'">
+                <input type="button" id="view" value="玩家參賽" class="indexbutton" onclick="location.href='post.php'">
+                <input type="button" id="signup" value="網站管理" class="indexbutton selectbut" onclick="location.href='login.php'">
+                <input type="submit" id="loggout-button" class="indexbutton" name="logout" value="登出">
+            </form>
         </div>
         <?php
             include("link.php");
             if(isset($_SESSION["data"])){
                 ?>
-                <form>
-                    <button type="submit" id="loggout-button" class="loggout-button" name="logout">logout</button>
-                </form>
+                <div class="loginhead">
+                    <button class="button2 selectbut" onclick="location.href='login.php'">留言管理</button>
+                    <button class="button2" onclick="location.href='comp.php'">賽制管理</button>
+                </div>
                 <?php
-                if(isset($_GET["logout"])){
-                    ?><script>alert("登出成功!");location.href="login.php"</script><?php
-                    session_unset();
-                }
             }else{
                 ?>
                 <div class="indexdiv">
@@ -92,6 +92,15 @@
                     </form>
                 </div>
                 <?php
+            }
+            if(isset($_GET["logout"])){
+                if(isset($_SESSION["data"])){
+                    ?><script>alert("登出成功!");location.href="login.php"</script><?php
+                    session_unset();
+                }else{
+                    ?><script>alert("請先登入!");location.href="login.php"</script><?php
+                    session_unset();
+                }
             }
         ?>
         <script src="index.js"></script>
