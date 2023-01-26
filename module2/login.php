@@ -144,6 +144,16 @@
                                                     <?php
                                                 }
                                             }
+                                            ?></tr><tr><?php
+                                            if($a[$i][12]==""){
+                                                ?>
+                                                <td class="adminmessage" colspan="4">管理員回應: 無</td>
+                                                <?php
+                                            }else{
+                                                ?>
+                                                <td class="adminmessage" colspan="4">管理員回應: <?= $a[$i][12] ?></td>
+                                                <?php
+                                            }
                                         ?>
                                     </tr>
                                 </table>
@@ -309,6 +319,29 @@
                     mysqli_query($db,"UPDATE `message` SET `pin`='yes' WHERE `sn`='$sn'");
                     ?><script>alert("訂選成功!");location.href="login.php"</script><?php
                 }
+            }
+            if(isset($_GET["resp"])){
+                $sn=$_GET["resp"];
+                $row=mysqli_fetch_row(mysqli_query($db,"SELECT*FROM `message` WHERE `sn`='$sn'"))
+                ?>
+                <div class="adminresp" id="editchatdiv">
+                    <div class="signupdiv">
+                        <form>
+                            <div class="title">管理員留言</div>
+                            留言內容: <textarea name="message" rows="1" cols="25"><?= @$row[12] ?></textarea><br>
+                            留言序號:<input type="text" name="sn" placeholder="4位數字" style="width: 50px;" value="<?= @$sn ?>" readonly>
+                            <input type="submit" name="respsubmit" class="button" value="送出">
+                            <input type="button" onclick="location.href='login.php'" class="button" value="返回"><br>
+                        </form>
+                    </div>
+                </div>
+                <?php
+            }
+            if(isset($_GET["respsubmit"])){
+                $message=$_GET["message"];
+                $sn=$_GET['sn'];
+                mysqli_query($db,"UPDATE `message` SET `respond`='$message' WHERE `sn`='$sn'");
+                ?><script>alert("更改成功!");location.href="login.php"</script><?php
             }
         ?>
         <script src="index.js"></script>

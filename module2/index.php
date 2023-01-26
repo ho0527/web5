@@ -96,6 +96,16 @@
                                                 <?php
                                             }
                                         }
+                                        ?></tr><tr><?php
+                                        if($a[$i][12]==""){
+                                            ?>
+                                            <td class="adminmessage" colspan="3">管理員回應: 無</td>
+                                            <?php
+                                        }else{
+                                            ?>
+                                            <td class="adminmessage" colspan="3">管理員回應: <?= $a[$i][12] ?></td>
+                                            <?php
+                                        }
                                     ?>
                                 </tr>
                             </table>
@@ -210,6 +220,16 @@
                                             <td class="postemail" colspan="2">E-mail:未提供 電話:未提供</td>
                                             <?php
                                         }
+                                    }
+                                    ?></tr><tr><?php
+                                    if($a[$i][12]==""){
+                                        ?>
+                                        <td class="adminmessage" colspan="4">管理員回應: 無</td>
+                                        <?php
+                                    }else{
+                                        ?>
+                                        <td class="adminmessage" colspan="4">管理員回應: <?= $a[$i][12] ?></td>
+                                        <?php
                                     }
                                 ?>
                             </tr>
