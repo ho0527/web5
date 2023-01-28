@@ -280,7 +280,7 @@
                 }elseif($username==""||$sn==""){
                     ?><script>alert("請輸入名字及序號!");location.href="index.php"</script><?php
                 }else{
-                    if(isset($picture)){
+                    if(isset($_FILES["picture"])){
                         // 轉換圖片為二進位資料
                         @$image=base64_encode(file_get_contents($picture));
                         if(isset($emailbox)){
