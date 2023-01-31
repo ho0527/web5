@@ -2,8 +2,8 @@
 /**
  * @return void
  */
-function extracted()
-{
+function extracted(){
+    echo("text0\n");
     while (($line = readline()) != false) {
         $number = explode(" ", $line);
         $num1 = $number[0];
