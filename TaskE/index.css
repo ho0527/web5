@@ -15,17 +15,19 @@ body{
     font-size: 15px;
     position: relative;
     bottom:10px;
+    right: 50px;
     /* margin-bottom: 5px; */
 }
 
 .aside{
     position: relative;/* 絕對定位 */
-    top: 0px;/* 定位 */
+    top: 5px;/* 定位 */
     left: 0px;
-    width: 15%;/* 寬度 */
-    height: 90%;/* 高度 */
+    width: 17%;/* 寬度 */
+    height: 100%;/* 高度 */
     float: left;
     /* margin-top: 55px; */
+    border-right: 1px black solid;
 }
 
 /* 新增學生 */
@@ -33,13 +35,14 @@ body{
     cursor: pointer;/* 覆蓋指標 */
     background-color: rgba(200, 200, 200,0.75);/* 背景顏色 */
     border: none;
-    width: 275px;/* 寬度 */
+    width: 285px;/* 寬度 */
     height: 45px;/* 高度 */
     font-size: 30px;/* 字體大小 */
     text-align: center;/* 文字置中 */
     border-radius: 20px;/* 圓弧邊框 */
     position: relative;/* 絕對定位 */
     top:0px;/* 定位 */
+    right: 3px;
     box-shadow: 2px 2px 5px rgba(100, 100, 100, 1);
 }
 
@@ -206,4 +209,8 @@ body{
     border-radius: 20px;
     background-color: rgb(231, 231, 231);
     text-align: center;
+}
+
+.select{
+    background-color: rgb(145, 145, 145);
 }

@@ -6,7 +6,7 @@
     $sum=0;
     $city_code=substr($id,0,1);
     $sum=$sum+((int)($city_map[$city_code]/10)+((int)(substr($city_map[$city_code],1,1))*9));
-    for($i=1;$i<10;$i=$i-1){
+    for($i=1;$i<10;$i=$i+1){
         $sum=$sum+((int)(substr($id,(10-$i),1))*$i);
     }
     if($sum%10==0){

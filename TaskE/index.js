@@ -7,18 +7,37 @@ let lastname=document.getElementById("last_name")
 let firstname=document.getElementById("first_name")
 let email=document.getElementById("email")
 let newclass=document.getElementById("addClass")
+let lessmoreclass=document.getElementById("class")
+let allclass=document.getElementById("allclass")
+let allstu=document.getElementById("allstu")
 
-
+allclass.style.display="inline"
 addstudiv.style.display="none"
 addclassdiv.style.display="none"
+allstu.classList.add("select")
+
+function claerselect(){
+    allstu.classList.remove("select")
+}
+
+lessmoreclass.addEventListener("click",function(){
+    if(allclass.style.display=="none"){
+        allclass.style.display="inline"
+        lessmoreclass.innerHTML=`班級(顯示更少)`
+    }else{
+        allclass.style.display="none"
+        lessmoreclass.innerHTML=`班級(顯示更多)`
+    }
+})
 
 addsut.onclick=function(){
     addstudiv.style.display="inline"
+    addsut.classList.add("select")
 }
 
 newclass.addEventListener("click",function(){
-    console.log("click")
     addclassdiv.style.display="inline"
+    newclass.classList.add("select")
 })
 
 but.forEach(function(buttons){
@@ -136,3 +155,5 @@ form.onsubmit=function(event){
 //         //hide student's address
 //     }
 // });
+
+window.onbeforeunload=null

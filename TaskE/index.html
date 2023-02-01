@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>模組 E - 學生資料管理系統</title>
+        <title>模組 E-學生資料管理系統</title>
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
@@ -13,13 +13,15 @@
             </form>
         </header><br>
         <aside class="aside">
-            <button id="addStudent" class="addsut"><img src=""></img>新增學生</button>
+            <button id="addStudent" class="addsut"><img src="">新增學生</button>
             <ul id="studentList" class="list">
-                <li class="item">所有學生 <span class="num"></span></li>
+                <li class="item" id="allstu">所有學生<span class="num"></span></li>
             </ul>
             <hr>
             <ul id="classList" class="list">
-                <li class="item"><img src=""></img>班級 <span class="num"></span></li><br>
+                <li class="item" id="class"><img src="">班級(顯示更少)<span class="num"></span></li><br>
+                    <div id="allclass">
+                    </div>
                 <li id="addClass" class="item">建立班級</li>
             </ul>
             <hr>

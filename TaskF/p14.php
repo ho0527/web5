@@ -8,18 +8,19 @@
         $left=0;
         $right=0;
         for($j=0;$j<$len;$j=$j+1){
-            if($str[$j]=="("){
+            if($str[$j]==" "){
+            }elseif($str[$j]=="("){
                 $left=$left+1;
             }elseif($str[$j]==")"){
                 $right=$right+1;
             }elseif($str[$j]=="*"){
-                if($left > $right){
+                if($left>$right){
                     $right=$right+1;
                 }else{
                     $left=$left+1;
                 }
             }else{
-                echo("內涵無效字元");
+                echo("內含無效字元");
                 break;
             }
         }

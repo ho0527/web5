@@ -23,11 +23,12 @@
                     <button class="button2" onclick="location.href='login.php'">留言管理</button>
                     <button class="button2 selectbut" onclick="location.href='comp.php'">賽制管理</button>
                 </div>
+                <div>
+                    <?php
+                    
+                    ?>
+                </div>
                 <?php
-                if(isset($_GET["logout"])){
-                    ?><script>alert("登出成功!");location.href="login.php"</script><?php
-                    session_unset();
-                }
             }else{
                 ?><script>alert("請先登入");location.href="login.php"</script><?php
             }
