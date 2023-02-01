@@ -1,8 +1,9 @@
 let but=document.querySelectorAll(".close")
 let addstudiv=document.getElementById("dialog")
 let addclassdiv=document.getElementById("dialog2")
+let classname=document.getElementById("classname")
 let addsut=document.getElementById("addStudent")
-let form=document.getElementById("newStudent")
+let newstudent=document.getElementById("newStudent")
 let lastname=document.getElementById("last_name")
 let firstname=document.getElementById("first_name")
 let email=document.getElementById("email")
@@ -42,20 +43,47 @@ newclass.addEventListener("click",function(){
 
 but.forEach(function(buttons){
     buttons.onclick=function(){
-        location.href="index.html"
+        location.reload()
     }
 })
 
-let signupdb=indexedDB.open("user",1)
-signupdb.onupgradeneeded=function(){
-    let db=signupdb.result
-    let store=db.createObjectStore("name",{keyPath:"id"})
-    store.createIndex("name",{unique:true})
+// let signupdb=indexedDB.open("user",1)
+// signupdb.onupgradeneeded=function(){
+//     let db=signupdb.result
+//     let store=db.createObjectStore("name",{keyPath:"id"})
+//     store.createIndex("name",{unique:true})
+// }
+
+newstudent.onsubmit=function(event){
+    if(lastname.value==""||firstname.value==""){
+        alert("請輸入姓名!")
+    }else{
+        alert("註冊成功")
+    }
+    // event.preventDefault()
+    // let username=document.getElementById("stuname").value
+    // let user={id:Date.now(),name:username}
+    // let openDB=indexedDB.open("user",1)
+    // openDB.onsuccess=function(){
+    //     let db=openDB.result
+    //     let tx=db.transaction("name","readwrite")
+    //     let store=tx.objectStore("name")
+    //     let index=store.index("name")
+    //     let checkRequest=index.get(username)
+    //     checkRequest.onsuccess=function(){
+    //         if(checkRequest.result){
+    //             alert("用戶已存在")
+    //         }else{
+    //             store.put(user)
+    //             alert("新增成功")
+    //         }
+    //     }
+    // }
 }
 
-form.onsubmit=function(event){
-    if(lastname.value==""||firstname.value==""){
-        alert("請輸入姓名")
+newstudent.onsubmit=function(event){
+    if(classname.value==""){
+        alert("請輸入班級!")
     }else{
         alert("註冊成功")
     }

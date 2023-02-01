@@ -214,3 +214,7 @@ body{
 .select{
     background-color: rgb(145, 145, 145);
 }
+
+.searchresult{
+    background-color: yellow;
+}
