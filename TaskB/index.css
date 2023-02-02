@@ -1,3 +1,8 @@
+.navigationbar{
+    background-color: whitesmoke;
+}
+
+
 /* 電腦版排版 */
 @media only screen and (min-width: 1920px) {
   /* CSS 樣式 */

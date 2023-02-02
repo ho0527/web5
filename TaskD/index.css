@@ -5,12 +5,13 @@ body{
     user-select: none;
 }
 
-.head{
+.navigationbar{
     height: 60px;
     width: 100%;
     display: flex;
     justify-content: right;
     background-color: rgba(55, 55, 55, 0.234);
+    background-color: whitesmoke;
 }
 
 .indextitle{

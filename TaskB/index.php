@@ -7,5 +7,12 @@
     </head>
     <body>
         <img src="web00_1.jpg" class="logo"></img>
+        <div class="navigationbar">
+            <button class="button"></button>
+            <button class="button"></button>
+            <button class="button"></button>
+            <button class="button"></button>
+            <button class="button"></button>
+        </div>
     </body>
 </html>

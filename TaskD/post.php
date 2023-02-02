@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="poststyle.css">
     </head>
     <body>
-        <div class="head">
+        <div class="navigationbar">
             <input type="button" id="index" value="首頁" class="indexbutton" onclick="location.href='index.php'">
             <input type="button" id="view" value="瀏覽貼文" class="indexbutton" onclick="location.href='post.php'">
             <input type="button" id="signup" value="註冊" class="indexbutton">
