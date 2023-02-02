@@ -6,9 +6,10 @@
     $sum=0;
     $city_code=substr($id,0,1);
     $sum=$sum+((int)($city_map[$city_code]/10)+((int)(substr($city_map[$city_code],1,1))*9));
-    for($i=1;$i<10;$i=$i+1){
-        $sum=$sum+((int)(substr($id,(10-$i),1))*$i);
+    for($i=2;$i<=9;$i=$i+1){
+        $sum=$sum+((int)(substr($id,(10-$i),1))*($i-1));
     }
+    $sum=$sum+(int)(substr($id,9,1));
     if($sum%10==0){
         echo("Y".PHP_EOL);
     }else{
