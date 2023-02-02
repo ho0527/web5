@@ -19,80 +19,22 @@
             </ul>
             <hr>
             <ul id="classList" class="list">
-                <li class="item" id="class"><img src="">班級(顯示更少)<span class="num"></span></li><br>
-                    <div id="allclass">
-                    </div>
+                <li class="item" id="allclass"><img src="">班級(顯示更少)</li><br>
                 <li id="addClass" class="item">建立班級</li>
             </ul>
             <hr>
             <ul id="trash" class="list">
-                <li class="item">垃圾桶</li>
+                <li class="item" id="trashcan">垃圾桶</li>
             </ul>
             <button id="export_data">匯出資料</button>
             <button id="import_data">匯入資料</button>
         </aside>
         <main id="main">
-            <div class="students">
-                <div class="student">
-                    <img class="avatar" src="" alt="">
-                    <div class="info">
-                        <span class="fullname"></span>
-                        <span class="student_id"></span>
-                        <span class="email"></span>
-                        <span class="phone"></span>
-                        <span class="class"></span>
-                        <span class="address"></span>
-                    </div>
-                    <div class="actions">
-                        <button class="edit">編輯</button>
-                        <button class="delete">刪除</button>
-                    </div>
-                </div>
-                <div class="message">目前還沒有任何學生</div>
-            </div>
         </main>
-        <div class="div" id="dialog">
-            <div class="mask"></div>
-            <div class="body">
-                <h2 class="title">建立學生</h2><hr>
-                <form class="newStudent" id="newStudent" method="post">
-                    <!-- <div class="button"> -->
-                    <div class="left">
-                        <div class="avater">
-                            <img src="default.jpeg" class="avater_preview"></img>
-                            <input type="file" class="avatar">
-                        </div>
-                    </div>
-                    <div class="right">
-                        <input type="text" name="last_name" id="last_name" class="name" placeholder="姓氏">
-                        <input type="text" name="first_name" id="first_name" class="name" placeholder="名字"><br>
-                        <input type="email" name="email[]" class="input" placeholder="email"><br>
-                        <input type="tel" name="phone[]" class="input" placeholder="手機"><br>
-                        <input type="text" name="address" class="input" placeholder="住址"><br>
-                        <select name="class" id="class"></select><br>
-                        <textarea name="note" id="" cols="20" rows="1" class="note"></textarea><br>
-                        <div class="button">
-                            <button type="button" id="close" class="close">取消</button>
-                            <button id="addsutsubmit" name="enter" class="submit">確定</button>
-                        </div>
-                    </div>
-                    <!-- </div> -->
-                </form>
-            </div>
+        <div id="dialog">
         </div>
-        <div id="dialog2" class="addclass">
-            <div class="mask"></div>
-            <div class="addclassbody">
-                <h2 class="title">建立班級</h2><hr>
-                <form class="newClass" method="post">
-                    <input type="text" name="name" placeholder="班級名稱" id="classname" class="addclass"><br>
-                    <div class="button">
-                        <button class="close">取消</button>
-                        <button class="submit">儲存</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        <!-- <div id="dialog2" class="addclass">
+        </div> -->
         <script src="index.js"></script>
     </body>
 </html>
