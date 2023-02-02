@@ -261,7 +261,7 @@
                 @$tel=$_GET["tel"];
                 @$telbox=$_GET["telbox"];
                 @$message=$_GET["message"];
-                @$picture=$_FILES["picture"]["picture"];
+                @$picture=$_FILES["picture"]["name"];
                 @$sn=$_GET['sn'];
                 @$_SESSION["name"]=$username;
                 @$_SESSION["email"]=$email;
@@ -280,45 +280,61 @@
                 }elseif($username==""||$sn==""){
                     ?><script>alert("請輸入名字及序號!");location.href="index.php"</script><?php
                 }else{
-                    if(isset($_FILES["picture"])){
-                        // 轉換圖片為二進位資料
-                        @$image=base64_encode(file_get_contents($picture));
-                        if(isset($emailbox)){
-                            if(isset($telbox)){
-                                mysqli_query($db,"INSERT INTO `message`(`sn`, `username`, `message`, `email`, `emailbox`, `tel`, `telbox`, `date`, `picture`, `edit`, `del`, `respond`) VALUES ('$sn','$username','$message','$email','yes','$tel','yes','$date','$image','','','')");
-                                ?><script>alert("新增成功!");location.href="index.php"</script><?php
-                                @$_SESSION["name"]="";
-                                @$_SESSION["email"]="";
-                                @$_SESSION["tel"]="";
-                                @$_SESSION["message"]="";
-                                @$_SESSION["sn"]="";
+                    $targetDir = "uploads/";
+                    $fileName = basename($picture);
+                    $targetFilePath = $targetDir . $fileName;
+                    $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+                    if(!empty($picture)){
+                        // Allow certain file formats
+                        $allowTypes = array('jpg','png','jpeg','gif','pdf');
+                        if(in_array($fileType, $allowTypes)){
+                            // Upload file to server
+                            if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
+                                // Insert image file name into database
+                                if(isset($emailbox)){
+                                    if(isset($telbox)){
+                                        mysqli_query($db,"INSERT INTO `message`(`sn`, `username`, `message`, `email`, `emailbox`, `tel`, `telbox`, `date`, `picture`, `edit`, `del`, `respond`) VALUES ('$sn','$username','$message','$email','yes','$tel','yes','$date','','','','')");
+                                        ?><script>alert("新增成功!");location.href="index.php"</script><?php
+                                        @$_SESSION["name"]="";
+                                        @$_SESSION["email"]="";
+                                        @$_SESSION["tel"]="";
+                                        @$_SESSION["message"]="";
+                                        @$_SESSION["sn"]="";
+                                    }else{
+                                        mysqli_query($db,"INSERT INTO `message`(`sn`, `username`, `message`, `email`, `emailbox`, `tel`, `telbox`, `date`, `picture`, `edit`, `del`, `respond`) VALUES ('$sn','$username','$message','$email','yes','$tel','no','$date','','','','')");
+                                        ?><script>alert("新增成功!");location.href="index.php"</script><?php
+                                        @$_SESSION["name"]="";
+                                        @$_SESSION["email"]="";
+                                        @$_SESSION["tel"]="";
+                                        @$_SESSION["message"]="";
+                                        @$_SESSION["sn"]="";
+                                    }
+                                }else{
+                                    if(isset($telbox)){
+                                        mysqli_query($db,"INSERT INTO `message`(`sn`, `username`, `message`, `email`, `emailbox`, `tel`, `telbox`, `date`, `picture`, `edit`, `del`, `respond`) VALUES ('$sn','$username','$message','$email','no','$tel','yes','$date','','','','')");
+                                        ?><script>alert("新增成功!");location.href="index.php"</script><?php
+                                        @$_SESSION["name"]="";
+                                        @$_SESSION["email"]="";
+                                        @$_SESSION["tel"]="";
+                                        @$_SESSION["message"]="";
+                                        @$_SESSION["sn"]="";
+                                    }else{
+                                        mysqli_query($db,"INSERT INTO `message`(`sn`, `username`, `message`, `email`, `emailbox`, `tel`, `telbox`, `date`, `picture`, `edit`, `del`, `respond`) VALUES ('$sn','$username','$message','$email','no','$tel','no','$date','','','','')");
+                                        ?><script>alert("新增成功!");location.href="index.php"</script><?php
+                                        @$_SESSION["name"]="";
+                                        @$_SESSION["email"]="";
+                                        @$_SESSION["tel"]="";
+                                        @$_SESSION["message"]="";
+                                        @$_SESSION["sn"]="";
+                                    }
+                                }
+                                $insert = $db->query("INSERT into images (file_name, uploaded_on) VALUES ('".$fileName."', NOW())");
+                                ?><script>alert("The file has been uploaded successfully.!");location.href="index.php"</script><?php
                             }else{
-                                mysqli_query($db,"INSERT INTO `message`(`sn`, `username`, `message`, `email`, `emailbox`, `tel`, `telbox`, `date`, `picture`, `edit`, `del`, `respond`) VALUES ('$sn','$username','$message','$email','yes','$tel','no','$date','$image','','','')");
-                                ?><script>alert("新增成功!");location.href="index.php"</script><?php
-                                @$_SESSION["name"]="";
-                                @$_SESSION["email"]="";
-                                @$_SESSION["tel"]="";
-                                @$_SESSION["message"]="";
-                                @$_SESSION["sn"]="";
+                                ?><script>alert("Sorry, there was an error uploading your file.!");location.href="index.php"</script><?php
                             }
                         }else{
-                            if(isset($telbox)){
-                                mysqli_query($db,"INSERT INTO `message`(`sn`, `username`, `message`, `email`, `emailbox`, `tel`, `telbox`, `date`, `picture`, `edit`, `del`, `respond`) VALUES ('$sn','$username','$message','$email','no','$tel','yes','$date','$image','','','')");
-                                ?><script>alert("新增成功!");location.href="index.php"</script><?php
-                                @$_SESSION["name"]="";
-                                @$_SESSION["email"]="";
-                                @$_SESSION["tel"]="";
-                                @$_SESSION["message"]="";
-                                @$_SESSION["sn"]="";
-                            }else{
-                                mysqli_query($db,"INSERT INTO `message`(`sn`, `username`, `message`, `email`, `emailbox`, `tel`, `telbox`, `date`, `picture`, `edit`, `del`, `respond`) VALUES ('$sn','$username','$message','$email','no','$tel','no','$date','$image','','','')");
-                                ?><script>alert("新增成功!");location.href="index.php"</script><?php
-                                @$_SESSION["name"]="";
-                                @$_SESSION["email"]="";
-                                @$_SESSION["tel"]="";
-                                @$_SESSION["message"]="";
-                                @$_SESSION["sn"]="";
-                            }
+                            ?><script>alert("Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.!");location.href="index.php"</script><?php
                         }
                     }else{
                         if(isset($emailbox)){

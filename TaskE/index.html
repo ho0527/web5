@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <header class="header">
+        <header class="header" id="header">
             <h1 id="logo"></h1>
             <form id="searchForm">
                 <input type="text" name="search" class="search" placeholder="搜尋">
@@ -54,28 +54,28 @@
         <div class="div" id="dialog">
             <div class="mask"></div>
             <div class="body">
+                <h2 class="title">建立學生</h2><hr>
                 <form class="newStudent" id="newStudent" method="post">
                     <!-- <div class="button"> -->
-                        <h2 class="title">建立學生</h2><hr>
-                        <div class="left">
-                            <div class="avater">
-                                <img src="default.jpeg" class="avater_preview"></img>
-                                <input type="file" class="avatar">
-                            </div>
+                    <div class="left">
+                        <div class="avater">
+                            <img src="default.jpeg" class="avater_preview"></img>
+                            <input type="file" class="avatar">
                         </div>
-                        <div class="right">
-                            <input type="text" name="last_name" id="last_name" class="name" placeholder="姓氏">
-                            <input type="text" name="first_name" id="first_name" class="name" placeholder="名字"><br>
-                            <input type="email" name="email[]" class="input" placeholder="email"><br>
-                            <input type="tel" name="phone[]" class="input" placeholder="手機"><br>
-                            <input type="text" name="address" class="input" placeholder="住址"><br>
-                            <select name="class" id="class"></select><br>
-                            <textarea name="note" id="" cols="20" rows="1" class="note"></textarea><br>
-                            <div class="button">
-                                <button type="button" id="close" class="close">取消</button>
-                                <button id="addsutsubmit" name="enter" class="submit">確定</button>
-                            </div>
+                    </div>
+                    <div class="right">
+                        <input type="text" name="last_name" id="last_name" class="name" placeholder="姓氏">
+                        <input type="text" name="first_name" id="first_name" class="name" placeholder="名字"><br>
+                        <input type="email" name="email[]" class="input" placeholder="email"><br>
+                        <input type="tel" name="phone[]" class="input" placeholder="手機"><br>
+                        <input type="text" name="address" class="input" placeholder="住址"><br>
+                        <select name="class" id="class"></select><br>
+                        <textarea name="note" id="" cols="20" rows="1" class="note"></textarea><br>
+                        <div class="button">
+                            <button type="button" id="close" class="close">取消</button>
+                            <button id="addsutsubmit" name="enter" class="submit">確定</button>
                         </div>
+                    </div>
                     <!-- </div> -->
                 </form>
             </div>

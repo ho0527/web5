@@ -15,10 +15,10 @@ let allstu=document.getElementById("allstu")
 allclass.style.display="inline"
 addstudiv.style.display="none"
 addclassdiv.style.display="none"
-allstu.classList.add("select")
+allstu.classList.add("current")
 
 function claerselect(){
-    allstu.classList.remove("select")
+    allstu.classList.remove("current")
 }
 
 lessmoreclass.addEventListener("click",function(){
@@ -33,12 +33,12 @@ lessmoreclass.addEventListener("click",function(){
 
 addsut.onclick=function(){
     addstudiv.style.display="inline"
-    addsut.classList.add("select")
+    addsut.classList.add("current")
 }
 
 newclass.addEventListener("click",function(){
     addclassdiv.style.display="inline"
-    newclass.classList.add("select")
+    newclass.classList.add("current")
 })
 
 but.forEach(function(buttons){
